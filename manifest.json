@@ -16,6 +16,11 @@
       "build-background.js"
     ]
   },
+  "icons": {
+    "128": "styles/icon-large.png",
+    "16": "styles/icon-disabled.png",
+    "48": "styles/icon-disabled.png"
+  },
   "content_scripts": [
     {
       "matches": [        
