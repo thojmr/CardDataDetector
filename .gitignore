@@ -1,0 +1,7 @@
+# Dependency directories
+node_modules/
+*.VC.opendb
+*.VC.db
+*/build/
+.vscode
+TODO

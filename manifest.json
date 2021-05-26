@@ -1,0 +1,39 @@
+{
+  "manifest_version": 2,
+  "name": "CardDataDetector",
+  "description": "App Icon turns green when an image url contains Card Data",
+  "version": "0.1",
+  "permissions": [
+    "activeTab",
+    "tabs"
+  ],
+  "browser_action": {
+    "default_title": "",
+    "default_popup": ""
+  },
+  "options_page": "",
+  "background": {
+    "scripts": [
+      "build-background.js"
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": [        
+        "*://*/*.png",
+        "*://*/*.png?*",
+        "*://*/*.png?",
+        "*://*/*.png#*",
+        "*://*/*.png/"
+      ],
+      "js": [
+        "build-all_image_pages.js"   
+      ],
+      "css": [        
+      ],
+      "run_at": "document_idle"
+    }    
+  ],
+  "incognito": "split",
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
+}
