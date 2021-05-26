@@ -5,6 +5,7 @@ import { CardType } from './_models/card-type';
 
 class AllImagePages {
 
+    //Runs on png url page load
     constructor() {
         console.log('[CardDataDetector] Checking .png for card data')
         //Reset browser icon and title
@@ -15,7 +16,7 @@ class AllImagePages {
     }
 
     async checkForCardData() {
-        var imageBinaryStr = await this.getImageBinary(window.location.href);
+        const imageBinaryStr = await this.getImageBinary(window.location.href);
 
         //If no marker found then this is not a card
         if (!imageBinaryStr) {
@@ -23,7 +24,7 @@ class AllImagePages {
             return;
         }
 
-        var cardType = this.hasCardData(imageBinaryStr);
+        const cardType = this.hasCardData(imageBinaryStr);
         if (cardType == CardType.None) return;
         console.log('[CardDataDetector] Card Data found!')
 
@@ -35,12 +36,12 @@ class AllImagePages {
 
     async getImageBinary(url: string): Promise<string> {
         //Fetch the image from current url
-        let blob = await this.fetchImg(url);
+        const blob = await this.fetchImg(url);
         if (!blob) return "";        
 
         let binaryStr = '';
-        let bytes = new Uint8Array(blob);
-        let len = bytes.byteLength;
+        const bytes = new Uint8Array(blob);
+        const len = bytes.byteLength;
 
         //Convert to binary string
         for (let i = 0; i < len; i++) {
