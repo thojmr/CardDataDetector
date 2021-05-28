@@ -41,6 +41,7 @@ module.exports = {
         new CopyWebpackPlugin([
             { from: 'manifest.json' },
             { from: 'client/styles', to: `${BUILD_OUT}/styles/` },
+            { from: 'client/resources/How to install.txt' },
         ]),
         new CrxAutoReloadPlugin({
             interval: 2000, // watch interval

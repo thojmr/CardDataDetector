@@ -1,0 +1,5 @@
+## How to install
+1. Extract the contents of this zip somewhere it won't be deleted
+2. Open Chrome > Manage Extensions > Load unpacked > select the extracted folder
+3. The extension should be installed
+    - You might want to enable it in incognito mode, and pin it to the extension bar
