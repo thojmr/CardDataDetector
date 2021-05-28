@@ -7,7 +7,7 @@ const BUILD_OUT = path.resolve(__dirname, './client/build');
 
 module.exports = {
     entry: {
-        all_image_pages: './client/content-scripts/all-image-pages.ts',
+        png_page: './client/content-scripts/png_page.ts',
         background: './client/background/background.ts'
     },
     output: {
