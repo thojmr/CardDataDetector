@@ -18,7 +18,8 @@ It's too much effort to host this officially through the Chrome App Store, so yo
 ## (Developers only) Building from scratch
 <details>
     <summary>Click to expand</summary>
-How to build this project
+How to build this project: 
+    
 - Install NodeJs
 - Run `npm install --force` from this project's root
     - You will need Webpack 5 installed globally as well for the next step
