@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "CardDataDetector",
-  "description": "App Icon turns green when a .png url contains Card Data",
+  "description": "App Icon turns green when a .png url contains Illusion Card/Scene Data",
   "version": "0.1",
   "permissions": [
 

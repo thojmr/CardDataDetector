@@ -23,7 +23,7 @@ export default class BrowserIcon {
 			});
 	}
 
-    //Get tab id for when message sent from browser action popup
+    //Get tab id for when message sent from browser action popup (note relly needed here for this extension)
 	async getCurrentTabId(sender) {
 		if (!sender) return;
 
@@ -48,6 +48,7 @@ export default class BrowserIcon {
 		window.chrome.browserAction.setTitle({title: title, tabId: tabId})
 	}
 	
+	//Change the icon color for a single tab, or all tabs
 	setActive(tabId?: number) {
 		if (tabId || tabId == 0) {
 			window.chrome.browserAction.setIcon({path: 'styles/icon-enabled.png', tabId: tabId})
@@ -63,7 +64,8 @@ export default class BrowserIcon {
 			window.chrome.browserAction.setIcon({path: 'styles/icon-disabled.png'})
 		}
 	}
-    
+	
+	//Select the icon color/style based on the type passed in
     async setBrowserActionIcon(type: ActionIcon, sender?, customTitle?: string, allTabs?: boolean) {
 		let path = '';
 		let tabId = await this.getCurrentTabId(sender);

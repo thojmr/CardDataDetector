@@ -16,16 +16,19 @@ class PngPageContentScript {
     }
 
     async checkForCardData() {
-        //Get image binary string
-        const imageBinaryStr = await this.getImageBinary(window.location.href);
 
-        //If no marker found then this is not a card
+        //Fetch the image araybuffer from current url
+        const blob = await this.fetchImg(window.location.href);
+        //Get image binary string
+        const imageBinaryStr = await this.getImageBinary(blob);
+
+        //If no binary found then this is not a card
         if (!imageBinaryStr) {
             Common.setBrowserActionIconState(ActionIcon.DISABLED);
             return;
         }
 
-        //Check string for matching illusion game name
+        //Check image binary for matching illusion game name
         const cardType = this.hasCardData(imageBinaryStr);
         if (cardType == CardType.None) return;
         console.log(`[CardDataDetector] Card Data found for game ${cardType}!`)
@@ -37,14 +40,12 @@ class PngPageContentScript {
     }
 
     //Convert image to its binary string
-    async getImageBinary(url: string): Promise<string> {
-        //Fetch the image from current url
-        const blob = await this.fetchImg(url);
+    async getImageBinary(blob: ArrayBuffer): Promise<string> {
         if (!blob) return;        
 
         let binaryStr = '';
         const bytes = new Uint8Array(blob);
-        if (!bytes) return;
+        if (!bytes?.length) return;
 
         const len = bytes.byteLength;
 
@@ -85,7 +86,7 @@ class PngPageContentScript {
             return CardType.EmotionCreators;
         }
 
-        //When None found
+        //When None found, reset icon
         Common.setBrowserActionIconTitle(""); 
         return CardType.None;
     }

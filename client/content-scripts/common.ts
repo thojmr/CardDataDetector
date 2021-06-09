@@ -14,13 +14,8 @@ class Common {
         window.chrome.runtime.sendMessage({ browserActionTitle: title });
     }
 
-    getActionIconState(isCard: boolean): ActionIcon {
-       
-        if (isCard) {
-            return ActionIcon.ENABLED;
-        } else {
-            return ActionIcon.DISABLED;
-        }              
+    getActionIconState(isCard: boolean): ActionIcon {    
+        return isCard ? ActionIcon.ENABLED : ActionIcon.DISABLED;
     }    
 }
 

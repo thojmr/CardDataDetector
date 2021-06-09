@@ -1,3 +1,4 @@
+//The strings to search for in card data
 export enum CardType {
     Koikatsu = "KoiKatuChara",
     KoikatsuParty = "KoiKatuCharaS",
