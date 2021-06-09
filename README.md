@@ -7,8 +7,9 @@ It's too much effort to host this officially through the Chrome App Store, so yo
 
 ## How to install
 1. Download the latest .zip from the Releases page
-2. Open Chrome > Extension icon > Manage Extensions > Load unpacked > select the .zip file
-3. The extension should be installed
+2. Extract the contents of this zip somewhere it won't be deleted
+3. Open Chrome > Extension icon > Manage Extensions > Load unpacked > select the .zip file
+4. The extension should be installed
     - You might want to enable it in incognito mode, and pin it to the extension bar
 
 
