@@ -4,7 +4,7 @@ It will check any image urls ending with .png for Illusion card data and scene d
 
 Use case: "right click a possible card image > select open image in new tab > check icon color in that new tab".
 
-It's too much effort to host this officially through the Chrome App Store, so you'll install it as an unpacked extension (below).
+It's too much effort to host this officially through the Chrome App Store, so you'll need to install it as an unpacked extension (below).
 
 ## How to install
 1. Download the latest .zip from the Releases page
