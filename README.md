@@ -1,7 +1,8 @@
 # Introduction
 This repository contains the CaardDataDetector chrome extension
 It will check any image urls ending with .png for Illusion card data and scene data.  When an image has card data the extension icon will turn green.
-Use case: "right click image > open image in new tab > check icon color in that tab".
+
+Use case: "right click a possible card image > select open image in new tab > check icon color in that new tab".
 
 It's too much effort to host this officially through the Chrome App Store, so you'll install it as an unpacked extension (below).
 
